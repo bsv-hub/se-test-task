@@ -12,10 +12,10 @@ sail-up:
 sail-down:
 	vendor/bin/sail down
 
-analyse:
+test:
 	vendor/bin/sail artisan test
 
-check:
+analyse:
 	vendor/bin/sail php vendor/bin/phpstan analyse app/
 
 shell:
