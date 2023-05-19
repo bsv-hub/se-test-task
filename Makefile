@@ -1,5 +1,7 @@
 setup:
+	cp -n .env.example .env
 	composer install
+	vendor/bin/sail down
 	vendor/bin/sail up -d
 	vendor/bin/sail artisan migrate
 	vendor/bin/sail artisan db:seed
