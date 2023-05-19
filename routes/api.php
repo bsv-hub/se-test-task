@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\PriceController;
+// use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// TODO: возможно использовать ресурсный раутинг
+Route::get('/prices', [PriceController::class, 'index'])->name('prices.index');
+Route::patch('/prices/{product}', [PriceController::class, 'update'])->name('prices.update');
